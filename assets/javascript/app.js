@@ -118,25 +118,25 @@ var q8 = {
 };
 
 var q9 = {
-	question : '?',
-	possibleAnswers : ['A. The Night Before Christmas',
-				 'B. Three Little Pigs',
-				 'C. The Old Mill',
-				 'D. The Gallopin\' Gaucho'],
+	question : 'Which movement was Pablo Picasso famous for?',
+	possibleAnswers : ['A. Impressionism',
+				 'B. Imperialism',
+				 'C. Dots',
+				 'D. Cubist'],
 	flags : [false, false, false, true],
-	answer : 'D. The Gallopin\' Gaucho'
+	answer : 'D. Cubist'
 };
 
 var q10 = {
-	question : 'Which wartime activity did the Walt Disney Studios partake in to support the American war effort?',
-	possibleAnswers : ['A. Recycling used film footage',
-				  'B. Designing US Army & US Navy insignia',
-				  'C. Hosted a Studio Victory Garden where employees grew food for their families',
-				  'D. Forced employees to carpool by closing parking lots to non-carpool cars'],
+	question : 'What country was Francisco de Goya from?',
+	possibleAnswers : ['A. Turkey',
+				  'B. Spain',
+				  'C. Brazil',
+				  'D. Mexico'],
 	flags : [false, true, false, false],
-	answer : 'B. Designing US Army & US Navy insignia'
+	answer : 'B. Spain'
 }
-
+//questions in array
 var questionArray = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
 
 function loadQuestion(questionSelection) {
@@ -151,11 +151,6 @@ function loadQuestion(questionSelection) {
 //  nextQuestion(index);
 }
 
-//function nextQuestion() {
-//	index = index++;
-//	console.log(index);
-//}
-//getting questions by index in array and displaying along with timer
 function setup() {
 	index = 0;
 	$('.question').append('<button id="startButton">Start</button>');
@@ -181,16 +176,31 @@ function getAnswer() {
 		loadQuestion();
 	})
 }
+function imageCorrect(){
+	var imgCorrect = ["fkdear.jpeg", "gs1.jpeg", "jp1.jpeg", "pp1.jpg", "sd1.jpeg", "vvg1.jpg", "vvg3.jpg", "vvg5.jpg", "vvg7.jpeg", "vvg9.jpg"];
+	var a;
+	for(a=0; a<data.length; a++);
+	$(".image").html("<center><fieldset style='height:200px; float:left; border-radius:15px; border-width:6px;", <img src='"+data[a]+"' height='200px' width='300px'/></fieldset></center>)
+}
+
+function imageWrong(){
+var imgWrong = ["frida_kahlo.jpg", "gs2.jpeg", "jp2.jpeg", "pp2.jpg", "sd2.jpg", "vvg2.jpg", "vvg4.jpg", "vvg6.jpg", "vvg8.jpg", "vvg10.jpg"];
+var b;
+	for(b=0; b<data.length; b++);
+	$(".image").html("<center><fieldset style='height:200px; float:left; border-radius:15px; border-width:6px;", <img src='"+data[a]+"' height='200px' width='300px'/></fieldset></center>)
+}
+
+
 //if answer is correct
 function answerCorrect() {
+	imageCorrect();
 	correct++;
-	//alert("Correct!");
 	console.log("correct");
 }
 //if answer wrong
 function answerWrong() {
+	imageWrong();
 	wrong++;
-	//alert("Incorrect!");
 	console.log("wrong");
 }
 //displaying the score in html
