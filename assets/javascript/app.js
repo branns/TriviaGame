@@ -147,8 +147,6 @@ function loadQuestion(questionSelection) {
   $("#buttonB").text(questionArray[questionSelection].possibleAnswers[1]).show();
   $("#buttonC").text(questionArray[questionSelection].possibleAnswers[2]).show();
   $("#buttonD").text(questionArray[questionSelection].possibleAnswers[3]).show();
-//  getAnswer();  
-//  nextQuestion(index);
 }
 
 function setup() {
@@ -176,31 +174,31 @@ function getAnswer() {
 		loadQuestion();
 	})
 }
-function imageCorrect(){
-	var imgCorrect = ["fkdear.jpeg", "gs1.jpeg", "jp1.jpeg", "pp1.jpg", "sd1.jpeg", "vvg1.jpg", "vvg3.jpg", "vvg5.jpg", "vvg7.jpeg", "vvg9.jpg"];
-	var a;
-	for(a=0; a<data.length; a++);
-	$(".image").html("<center><fieldset style='height:200px; float:left; border-radius:15px; border-width:6px;", <img src='"+data[a]+"' height='200px' width='300px'/></fieldset></center>)
-}
 
-function imageWrong(){
-var imgWrong = ["frida_kahlo.jpg", "gs2.jpeg", "jp2.jpeg", "pp2.jpg", "sd2.jpg", "vvg2.jpg", "vvg4.jpg", "vvg6.jpg", "vvg8.jpg", "vvg10.jpg"];
-var b;
-	for(b=0; b<data.length; b++);
-	$(".image").html("<center><fieldset style='height:200px; float:left; border-radius:15px; border-width:6px;", <img src='"+data[a]+"' height='200px' width='300px'/></fieldset></center>)
-}
-
-
+//function imageCorrect(){
+//var imgCorrect = ["fkdear.jpeg", "gs1.jpeg", "jp1.jpeg", "pp1.jpg", "sd1.jpeg", "vvg1.jpg", "vvg3.jpg", "vvg5.jpg", "vvg7.jpeg", "vvg9.jpg"];
+//var a;
+//for(a=0; a<imgCorrect.length; a++);
+//	$(".image").html(<img src="");
+//}
+//function imageWrong(){
+//var imgWrong = ["frida_kahlo.jpg", "gs2.jpeg", "jp2.jpeg", "pp2.jpg", "sd2.jpg", "vvg2.jpg", "vvg4.jpg", "vvg6.jpg", "vvg8.jpg", "vvg10.jpg"];
+//var b;
+//for(b=0; b<imgWrong.length; b++);
+//	$(".image").html(imgWrong);
+//}
 //if answer is correct
 function answerCorrect() {
-	imageCorrect();
+	//imageCorrect();
 	correct++;
+	alert("Correct!");
 	console.log("correct");
 }
 //if answer wrong
 function answerWrong() {
-	imageWrong();
+	//imageWrong();
 	wrong++;
+	alert("Incorrect!");
 	console.log("wrong");
 }
 //displaying the score in html
@@ -258,10 +256,6 @@ if ((answerChosen == 'D') && (questionArray[index].flags[3] == true)) {
  	$(".mltplChoice").hide();
  	showScore();
  }
-});
-
-
-//	$('#start').click(countdownTimer.start);
 });
 	
 });
