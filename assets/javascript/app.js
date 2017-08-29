@@ -78,7 +78,7 @@ var q4 = {
 };
 
 var q5 = {
-	question : 'What was said to be one of Vincent"s favorite drinks?',
+	question : 'What was said to be one of Vincent"s favorite drink?',
 	possibleAnswers : ['A. Vodka',
 				 'B. Absinthe',
 				 'C. Wine',
@@ -121,10 +121,10 @@ var q9 = {
 	question : 'Which movement was Pablo Picasso famous for?',
 	possibleAnswers : ['A. Impressionism',
 				 'B. Imperialism',
-				 'C. Dots',
-				 'D. Cubist'],
+				 'C. Dotism',
+				 'D. Cubism'],
 	flags : [false, false, false, true],
-	answer : 'D. Cubist'
+	answer : 'D. Cubism'
 };
 
 var q10 = {
@@ -160,10 +160,8 @@ function setup() {
 }		
 
 function getAnswer() {
-
 //  nextQuestion();
 	$('.mltplChoice').on('click', function() {
-	  console.log('alert', index);
 		index++;
 		console.log('click', index);
 		$(".question").text('');
@@ -175,32 +173,34 @@ function getAnswer() {
 	})
 }
 
-//function imageCorrect(){
-//var imgCorrect = ["fkdear.jpeg", "gs1.jpeg", "jp1.jpeg", "pp1.jpg", "sd1.jpeg", "vvg1.jpg", "vvg3.jpg", "vvg5.jpg", "vvg7.jpeg", "vvg9.jpg"];
-//var a;
-//for(a=0; a<imgCorrect.length; a++);
-//	$(".image").html(<img src="");
-//}
-//function imageWrong(){
-//var imgWrong = ["frida_kahlo.jpg", "gs2.jpeg", "jp2.jpeg", "pp2.jpg", "sd2.jpg", "vvg2.jpg", "vvg4.jpg", "vvg6.jpg", "vvg8.jpg", "vvg10.jpg"];
-//var b;
-//for(b=0; b<imgWrong.length; b++);
-//	$(".image").html(imgWrong);
-//}
+var newImg = $("<img>");
+
+function imageCorrect(){
+var imgCorrect = ["../images/fkdear.jpeg", "../images/gs1.jpeg", "../images/jp1.jpeg", "../images/pp1.jpg", "../images/sd1.jpeg",
+ "../images/vvg1.jpg", "../images/vvg3.jpg", "../images/vvg5.jpg", "../images/vvg7.jpeg", "../images/vvg9.jpg"];
+var a;
+for(a=0; a<imgCorrect.length; a++);
+	newImg.attr('src',imgCorrect[a])
+	$('.image').append(newImg)
+}
+function imageWrong(){
+var imgWrong = ["../images/frida_kahlo.jpg", "../images/gs2.jpeg", "../images/jp2.jpeg", "../images/pp2.jpg", "../images/sd2.jpg", 
+"../images/vvg2.jpg", "../images/vvg4.jpg", "../images/vvg6.jpg", "../images/vvg8.jpg", "../images/vvg10.jpg"];
+var b;
+for(b=0; b<imgWrong.length; b++);
+	newImg.attr('src',imgWorrect[b])
+	$('.image').append(newImg)
+}
 //if answer is correct
 function answerCorrect() {
-	//imageCorrect();
+	imageCorrect();
 	correct++;
-	alert("Correct!");
-	console.log("correct");
-}
+} 
 //if answer wrong
 function answerWrong() {
-	//imageWrong();
+	imageWrong();
 	wrong++;
-	alert("Incorrect!");
-	console.log("wrong");
-}
+} 
 //displaying the score in html
 function showScore() {
 	$('.question').empty();
